@@ -515,16 +515,16 @@ write plenty of tests.
             book__pages__lt=200,
         ).annotate(num_books=Count("book"))
 
-    In the first query, both conditions apply to the **same related row**,
+    In the first query, both conditions apply to the same related row,
     resulting in an intersection of conditions.
 
-    In the second query, Django creates **separate joins** for each
+    In the second query, Django creates separate joins for each
     ``filter()`` call. As a result, the conditions may match different
-    related rows, which can lead to unintuitive aggregation results
-    (such as overcounting).
+    related rows, which can lead to unintuitive aggregation results,
+    such as overcounting.
 
-    If you intend to apply multiple conditions to the same related object,
-    combine them within a single ``filter()`` call.
+    If you intend to apply multiple conditions to the same related
+    object, combine them within a single ``filter()`` call.
 
 ``order_by()``
 --------------
